@@ -1,3 +1,6 @@
+#less time to train the model when we select the features , low resources are used in the features as compare to the high to the data that have high features so select some significant features that are use full 
+# wrapper method two method that use the ML algorithm which is forward and backward in forward the start take less feature and add more features 
+
 # # featre selection include or exclude the features but in dimensionality we merg the existing featiure to made new feature to reduce the number of the features 
 
 
@@ -28,7 +31,7 @@
 # # print(result)
 
 
-from sklearn.feature_selection import SelectKBest, chi2, mutual_info_classif, SelectPercentile,SelectFpr
+from sklearn.feature_selection import SelectKBest,GenericUnivariateSelect, chi2, mutual_info_classif, SelectPercentile,SelectFpr
 from sklearn.datasets import load_breast_cancer
 
 # Load data
@@ -64,3 +67,7 @@ print("Selected features Based on FPR ", result[fprSelector.get_support()])
 
 # If you want to also print mutual info selected features
 # print("Selected features (15% mutual info):", result[perMu.get_support()])
+gen = GenericUnivariateSelect(chi2,mode="k_best", param=10).fit_transform(x1,y1)
+gen2 = GenericUnivariateSelect(mutual_info_classif,mode="percentile", param=20).fit_transform(x1,y1)
+print(gen.shape)
+print(gen2.shape)
