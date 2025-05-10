@@ -70,4 +70,6 @@ print("Selected features Based on FPR ", result[fprSelector.get_support()])
 gen = GenericUnivariateSelect(chi2,mode="k_best", param=10).fit_transform(x1,y1)
 gen2 = GenericUnivariateSelect(mutual_info_classif,mode="percentile", param=20).fit_transform(x1,y1)
 print(gen.shape)
-print(gen2.shape)
+print(gen2.shape)           
+print("Selected features (K=4, chi2):", result[kChi2_selector.get_support()])
+# these all the uni variant method that sir tought in the class 

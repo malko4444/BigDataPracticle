@@ -1,32 +1,37 @@
 import numpy as np  
 
-# a = np.array([11,12,13,14,15,16,17,18,19,20])
+a = np.array([11,12,13,14,15,16,17,18,19,20])
 # for i in range(3):
 #     print(a[i])
-
+print("this is zubair" ,a[:3])
 # a[9] = 100
 # print(a) 
 
 # q2
 id = np.array([1,2,3,4,5,6,7,8,9,10])
-print(id[0:10:2])
+print(id[1:10:2])
 
-id[0:10:2] = 100#yes it change the array 
-print(id[0:10:2])
-print(id)
+id[9] = 100#yes it change the array 
+# print(id[0:10:2])
+print("THE MODIFY THE ARRAY ",id)
 
 
 # q3
-threeByThree = np.array([[1,2,3],[4,5,6],[7,8,9]])
+threeByThree = np.array([
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+    ])
 print(threeByThree[1,2])
 id2 = [threeByThree[0,1] , threeByThree[1,1] , threeByThree[2,1]]
 id5 = threeByThree[:,1]
-print(id5)
+print("APPLY THE SIR METHOD ",id5)
 print(id2)
 # q4
 # 
 rangedArray = np.linspace(0,49,50)
 identity = np.identity(3)
+print("the idetity array ",identity)
 print(rangedArray)
 Random = np.zeros([4,2])
 for i in range(4):
